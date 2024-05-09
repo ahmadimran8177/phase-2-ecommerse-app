@@ -1,5 +1,6 @@
 import "@/app/styles.css";
 import { getAllProducts } from "@/app/dataRepository/queryFunc";
+import Image from "next/image";
 
 const Home = async () => {
   // const products = await fetch("http://localhost:3000/api/getAllProducts");
@@ -19,9 +20,11 @@ const Home = async () => {
           </form>
         </section>
         <section className="product-container" id="product-container">
-          {products?.map((product) => (
-            <a className="product" href={`/product/${product?.id}`}>
-              <img
+          {products?.map((product,i) => (
+            <a className="product" href={`/product/${product?.id}`} key={i}>
+              <Image
+              width={400}
+              height={400}
                 class="product-image"
                 src={product?.imageUrl}
                 alt="Tom &amp; Jarry T-Shirt"
