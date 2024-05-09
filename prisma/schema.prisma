@@ -1,0 +1,43 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email       String   @unique
+  password   String
+  name       String?
+  shippingAddress String?
+  orders     Order[]
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  price     Float
+  description String
+  imageUrl  String
+  category  String
+  stock     Int
+  orders    Order[]
+}
+
+model Order {
+  id          Int      @id @default(autoincrement())
+  userId     Int
+  productId   Int
+  quantity    Int
+  dateTime    DateTime @default(now())
+  status      String
+
+  user      User     @relation(fields: [userId], references: [id])
+  product    Product  @relation(fields: [productId], references: [id])
+}
