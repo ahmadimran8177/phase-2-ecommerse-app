@@ -19,7 +19,7 @@ const Home = async () => {
           </form>
         </section>
         <section className="product-container" id="product-container">
-          {/* {products?.map((product) => (
+          {products?.map((product) => (
             <a className="product" href={`/product/${product?.id}`}>
               <img
                 class="product-image"
@@ -29,7 +29,7 @@ const Home = async () => {
               <h1 class="product-name">{product?.name}</h1>
               <p class="product-price">{product?.stock}</p>
             </a>
-          ))} */}
+          ))}
         </section>
       </main>
     </div>
