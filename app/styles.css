@@ -512,3 +512,37 @@
     }
   }
   
+
+  .incorrect-credentials {
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .incorrect-credentials h2 {
+    color: #f00; /* Red color for error message */
+  }
+  
+  .incorrect-credentials ul {
+    list-style: disc;
+    margin: 1rem 0;
+    padding-left: 20px;
+  }
+  
+  .incorrect-credentials button {
+    margin: 1rem auto; /* Center the button */
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .incorrect-credentials a {
+    display: block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: #333;
+  }
+  

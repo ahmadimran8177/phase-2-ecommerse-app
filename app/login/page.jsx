@@ -3,7 +3,6 @@ import React from 'react'
 import Image from 'next/image'
 import loginImage from '@/app/images/login.png'
 import { loginFunc } from '@/app/lib/loginFunc'
-import { redirect } from 'next/dist/server/api-utils'
 
 const page = () => {
     return (
@@ -14,9 +13,14 @@ const page = () => {
                     <Image src={loginImage} alt="" width={600} height={300} />
                 </div>
 
-                <form className="login-form" action={loginFunc} method='post'>
+                <form className="login-form" onSubmit={(e) => {
+                    e.preventDefault()
+                    loginFunc(e.target[0].value, e.target[1].value)
+                }}
+                //  action={loginFunc} method='get'
+                >
                     <div className="input-container">
-                        <label for="username"  >Username:</label>
+                        <label for="username"  >Email:</label>
                         <div className="input-with-icon">
                             <i className="fa fa-user icon"></i>
                             <input type="text" name="username" id="username" required />
