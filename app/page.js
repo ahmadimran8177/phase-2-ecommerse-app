@@ -3,7 +3,6 @@ import { getAllProducts } from "@/app/dataRepository/queryFunc";
 import Image from "next/image";
 
 const Home = async () => {
-  // const products = await fetch("http://localhost:3000/api/getAllProducts");
   const products = await getAllProducts();
   return (
     <div>

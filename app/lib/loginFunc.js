@@ -9,7 +9,7 @@ export const loginFunc = async (username, password) => {
   });
   const originalPassword = user?.password;
   if (originalPassword == password) {
-    const redirectPath = `/user/${username}`;
+    const redirectPath = `/user/${user?.id}`;
     redirect(redirectPath);
   } else {
     redirect("/error");

@@ -13,3 +13,12 @@ export async function getOneProduct(slug) {
   });
   return res;
 }
+
+export async function getOneUser(slug) {
+  const res = await prisma.user.findUnique({
+    where: {
+      id: Number(slug),
+    },
+  });
+  return res;
+}
