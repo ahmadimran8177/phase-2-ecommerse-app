@@ -31,9 +31,9 @@ export default function RootLayout({ children }) {
               {/* <li className="nav-item" id="products">
                 <a href="/products">Products</a>
               </li> */}
-              {/* <li className="nav-item" id="login">
-              <a href="/login">Login</a>
-            </li> */}
+              <li className="nav-item" id="login">
+                <a href="/login">Login</a>
+              </li>
               {/* <li className="nav-item" id="profile">
               <a href="/profile">Profile</a>
             </li> */}

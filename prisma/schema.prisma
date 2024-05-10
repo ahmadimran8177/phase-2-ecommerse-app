@@ -16,6 +16,8 @@ model User {
   password   String
   name       String?
   shippingAddress String?
+  userType   String?
+  admin      Boolean?
   orders     Order[]
 }
 
