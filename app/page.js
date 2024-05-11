@@ -14,7 +14,7 @@ const Home = async () => {
   return (
     <div>
       <main>
-        <section className="search-container">
+        {/* <section className="search-container">
           <div className="form">
             <input
               type="search"
@@ -26,7 +26,7 @@ const Home = async () => {
               placeholder="Type to search products"
             />
           </div>
-        </section>
+        </section> */}
         <section className="product-container" id="product-container">
           {products?.map((product, i) => (
             <Link className="product" href={`/product/${product?.id}`} key={i}>
