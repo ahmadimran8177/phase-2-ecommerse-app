@@ -7,7 +7,7 @@ const OrderForm = ({ product, userId }) => {
             const productId = product?.id;
             const quantity = e.target[3].value;
             e.preventDefault()
-            createOrderFunc(productId, userId, quantity);
+            createOrderFunc(productId, userId, quantity, product?.price);
         }}>
             <div className="input-container"><label for="address">House No/Lane No</label><input className="checkout-input" type="text" id="address" required /> </div>
             <div className="input-container"><label for="city">City</label><input className="checkout-input" type="text" id="city" required /> </div>
