@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { useSelector, useDispatch } from 'react-redux';
-import Link from 'next/link'
+import Link from 'next/link';
 
 const SingleProduct = ({ product }) => {
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const SingleProduct = ({ product }) => {
                 <h1 className="product-detail-name">{product?.name}</h1>
                 <p className="product-detail-description">{product?.description}</p>
                 <p className="product-detail-price">{product?.stock}</p>
-                {cartItem === "customer" && <Link href={`/purchase/${product?.id}`}>Buy Now</Link>}
+                {cartItem[1] === "customer" && <Link href={`/purchase/${product?.id}/${cartItem[0]}`}>Buy Now</Link>}
             </div>
         </main>
     )

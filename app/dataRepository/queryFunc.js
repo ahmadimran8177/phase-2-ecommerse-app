@@ -42,3 +42,56 @@ export const getSearchProducts = async (search) => {
   });
   return res;
 };
+
+export const createOrder = async (userId, productId, quantity, status) => {
+  const res = await prisma.order.create({
+    data: {
+      userId: userId,
+      productId: productId,
+      quantity: Number(quantity),
+      status: status,
+    },
+  });
+  return res;
+};
+
+export const getAllOrders = async (userId) => {
+  const orders = await prisma.order.findMany({
+    where: {
+      userId: userId,
+    },
+  });
+  return orders;
+};
+
+export const getUserProducts = async (sellerid) => {
+  const res = await prisma.product.findMany({
+    where: {
+      sellerid: sellerid,
+    },
+  });
+  return res;
+};
+
+export const createProduct = async (
+  name,
+  price,
+  description,
+  imageUrl,
+  category,
+  stock,
+  sellerid
+) => {
+  const res = await prisma.product.create({
+    data: {
+      name: name,
+      price: Number(price),
+      description: description,
+      imageUrl: imageUrl,
+      category: category,
+      stock: Number(stock),
+      sellerid: sellerid,
+    },
+  });
+  return res;
+};

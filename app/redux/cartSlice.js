@@ -5,14 +5,14 @@ import { createSlice } from "@reduxjs/toolkit";
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartItem: "",
+    cartItem: [],
   },
   reducers: {
     addToCart: (state, action) => {
-      state.cartItem = action.payload.id;
+      state.cartItem = [action.payload.id, action.payload.userType];
     },
     emptyCart: (state, action) => {
-      state.cartItem = "";
+      state.cartItem = [];
     },
   },
 });

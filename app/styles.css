@@ -586,3 +586,7 @@ main {
   background-color: #ddd; /* Change background/text color on hover */
   color: #333;
 }
+
+.add-button{
+  width: 20vw;
+}

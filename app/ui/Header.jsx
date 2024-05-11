@@ -25,24 +25,22 @@ const Header = () => {
                     <li className="nav-item active" id="home">
                         <Link href={"/"}>Home</Link>
                     </li>
-                    {cartItem === "customer" && <li className="nav-item" id="orders">
-                        <a href="/orders">Orders</a>
+                    {cartItem[1] === "customer" && <li className="nav-item" id="orders">
+                        <Link href={`/orders/${cartItem[0]}`}>Orders</Link>
                     </li>}
-                    {cartItem === "seller" && <li className="nav-item" id="products">
-                        <a href="/products">Products</a>
+                    {cartItem[1] === "seller" && <li className="nav-item" id="products">
+                        <Link href={`/products/${cartItem[0]}`}>My Products</Link>
                     </li>}
-                    {cartItem === "" && <li className="nav-item" id="login">
+                    {cartItem.length < 1 && <li className="nav-item" id="login">
                         <Link href="/login">Login</Link>
                     </li>}
-                    {cartItem === "" || <li className="nav-item" id="logout">
+                    {cartItem.length > 1 && <li className="nav-item" id="profile">
+                        <Link href={`/user/${cartItem[0]}`}>Profile</Link>
+                    </li>}
+                    {cartItem.length > 1 && <li className="nav-item" id="logout">
                         <Link href={"/"} onClick={handleLogOut}>Logout</Link>
                     </li>}
-                    {/* <li className="nav-item" id="profile">
-              <a href="/profile">Profile</a>
-            </li> */}
-                    {/* <li className="nav-item" id="logout" onclick="logout()">
-              <a href="#">Logout</a>
-            </li> */}
+
                 </ul>
             </nav>
             <div className="hamburger">
