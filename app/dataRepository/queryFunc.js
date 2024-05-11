@@ -22,3 +22,23 @@ export async function getOneUser(slug) {
   });
   return res;
 }
+export const getUserWithEmail = async (username) => {
+  const res = await prisma.user.findUnique({
+    where: {
+      email: username,
+    },
+  });
+  return res;
+};
+
+export const getSearchProducts = async (search) => {
+  const res = await prisma.product.findMany({
+    where: {
+      name: {
+        contains: search,
+        mode: "insensitive",
+      },
+    },
+  });
+  return res;
+};

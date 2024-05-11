@@ -3,7 +3,7 @@ module.exports = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'prod-img.thesouledstore.com',
+          hostname: 'static-01.daraz.pk',
         },
       ],
     },

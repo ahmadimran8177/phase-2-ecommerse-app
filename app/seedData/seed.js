@@ -1,6 +1,5 @@
 // To seed data run "node seed.js" in terminal
 
-
 const { PrismaClient } = require("@prisma/client");
 let prisma;
 
@@ -13,21 +12,44 @@ if (process.env.NODE_ENV === "production") {
   prisma = global.prisma;
 }
 
-
 const users = [
   {
-    id: 1,
-    email: "user1@example.com",
-    password: "password1",
+    id: 4,
+    email: "user4@example.com",
+    password: "password4",
     name: "John Doe",
     shippingAddress: "123 Main St",
+    userType: "seller",
+    admin: "Yes",
   },
   // Add 9 more users with unique emails and names
   {
-    id: 2,
-    email: "user10@example.com",
-    password: "password10",
+    id: 5,
+    email: "user5@example.com",
+    password: "password5",
     name: "Alice Smith",
+    shippingAddress: "123234 Main St",
+    userType: "buyer",
+    admin: "No",
+  },
+  {
+    id: 6,
+    email: "user6@example.com",
+    password: "password6",
+    name: "Edward Doe",
+    shippingAddress: "34563 Main St",
+    userType: "buyer",
+    admin: "No",
+  },
+  // Add 9 more users with unique emails and names
+  {
+    id: 5,
+    email: "user5@example.com",
+    password: "password5",
+    name: "Alice Smith",
+    shippingAddress: "123234 Main St",
+    userType: "Seller",
+    admin: "Yes",
   },
   // ...
 ];

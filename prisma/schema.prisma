@@ -2,6 +2,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 datasource db {
@@ -18,6 +19,7 @@ model User {
   shippingAddress String?
   userType   String?
   admin      Boolean?
+  money      Int
   orders     Order[]
 }
 
@@ -29,6 +31,7 @@ model Product {
   imageUrl  String
   category  String
   stock     Int
+  sellerid  Int
   orders    Order[]
 }
 
@@ -39,7 +42,6 @@ model Order {
   quantity    Int
   dateTime    DateTime @default(now())
   status      String
-
   user      User     @relation(fields: [userId], references: [id])
   product    Product  @relation(fields: [productId], references: [id])
 }
