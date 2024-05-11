@@ -15,8 +15,8 @@ const page = async ({ params }) => {
                     </tr>
                 </thead>
                 <tbody id="table-body">
-                    {orders?.map((order) => (
-                        <tr>
+                    {orders?.map((order, i) => (
+                        <tr key={i}>
                             <td>{order?.userId}</td>
                             <td>{order?.productId}</td>
                             <td>{order?.quantity}</td>
