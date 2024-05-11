@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="nav">
                 <ul className="nav-items" id="nav-items">
                     <li className="nav-item active" id="home">
-                        <Link href="/">Home</Link>
+                        <Link href={"/"}>Home</Link>
                     </li>
                     {cartItem === "customer" && <li className="nav-item" id="orders">
                         <a href="/orders">Orders</a>

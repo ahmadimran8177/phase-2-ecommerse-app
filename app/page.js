@@ -2,6 +2,7 @@ import "@/app/styles.css";
 import { getAllProducts } from "@/app/dataRepository/queryFunc";
 import Image from "next/image";
 // import Form from "@/app/ui/form";
+import Link from "next/link";
 import { getSearchProducts } from "@/app/dataRepository/queryFunc";
 
 const Home = async () => {
@@ -28,7 +29,7 @@ const Home = async () => {
         </section>
         <section className="product-container" id="product-container">
           {products?.map((product, i) => (
-            <a className="product" href={`/product/${product?.id}`} key={i}>
+            <Link className="product" href={`/product/${product?.id}`} key={i}>
               <Image
                 width={400}
                 height={400}
@@ -38,7 +39,7 @@ const Home = async () => {
               />
               <h1 class="product-name">{product?.name}</h1>
               <p class="product-price">{product?.stock}</p>
-            </a>
+            </Link>
           ))}
         </section>
       </main>
