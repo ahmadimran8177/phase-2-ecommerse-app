@@ -2,7 +2,8 @@ import React from 'react'
 import { getAllOrders } from '@/app/dataRepository/queryFunc'
 
 const page = async ({ params }) => {
-    const orders = await getAllOrders(Number(params.slug))
+    const orders = await getAllOrders(Number(params.slug));
+    console.log(orders);
     return (
         <div className='table-section'>
             <table>

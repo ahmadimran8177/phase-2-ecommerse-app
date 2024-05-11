@@ -43,14 +43,20 @@ export const getSearchProducts = async (search) => {
   return res;
 };
 
-export const createOrder = async (userId, productId, quantity, status,price) => {
+export const createOrder = async (
+  productId,
+  userId,
+  quantity,
+  status,
+  price
+) => {
   const res = await prisma.order.create({
     data: {
       userId: userId,
       productId: productId,
       quantity: Number(quantity),
       status: status,
-      price:price
+      price: price,
     },
   });
   return res;
